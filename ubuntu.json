@@ -1,0 +1,10 @@
+{
+  "cpus": 2,
+  "memory": 2048,
+  "kernel": "./distros/ubuntu/vmlinuz",
+  "initrd": "./distros/ubuntu/initrd.img",
+  "storage": ["./distros/ubuntu/root.img", "./distros/ubuntu/seed.iso"],
+  "cmdline": "console=hvc0 root=/dev/vda1 rw",
+  "shared": ["shared"],
+  "network": true
+}
