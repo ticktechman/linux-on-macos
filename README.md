@@ -61,3 +61,7 @@ screen shot like this:
 ![oss](/Users/ticktech/usr/project/github/linux-on-macos/doc/images/oss.png)
 
 Simple and super fast~
+
+
+
+If you want to run ubuntu and archlinx, please goto [distros](distros.md).
