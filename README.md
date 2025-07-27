@@ -58,7 +58,7 @@ cat oss.json
 
 screen shot like this:
 
-![oss](/Users/ticktech/usr/project/github/linux-on-macos/doc/images/oss.png)
+![oss](./doc/images/oss.png)
 
 Simple and super fast~
 
