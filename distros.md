@@ -21,11 +21,13 @@ cd ubuntu-img
 
 # archlinux
 
-This vm use http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz for all stuff
+```bash
+git clone https://github.com/ticktechman/archlinux-img
+cd archlinux-img
+./build.sh
+```
 
-- kernel: boot/Image 
-- initrd: boot/initramfs-linux-fallback.img
-- rootfs: ArchLinuxARM-aarch64-latest.tar.gz
+
 
 
 # oss
