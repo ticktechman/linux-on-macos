@@ -1,5 +1,7 @@
 # Notice
 
+**Image Format:**
+
 - kernel: uncompressed raw image(recommended) or compressed raw image(with CONFIG_KERNEL_GZIP=y) -- Image / Image.gz(from directory: boot/arch/arm64/)
 - initrd: cpio / cpio + gzip
 - rootfs: raw disk image(with or without partitions)
@@ -15,8 +17,6 @@ cd ubuntu-img
 ./build.sh
 ./gen-seed.sh
 ```
-
-
 
 # archlinux
 
@@ -37,5 +37,5 @@ This vm use opensource linux and busybox
 ```
 
 
-> Important:
-> All the scripts above need to be run on a linux machine or VM.
+
+> **All the scripts above need to be run on a linux machine or VM. I use ubuntu25.04.**
