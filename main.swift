@@ -16,14 +16,14 @@ struct LinuxVirtualMachineProfile: Codable {
 
 func logi(_ message: String) {
   let formatter = DateFormatter()
-  formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+  formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
   let now = formatter.string(from: Date())
   print("[I|\(now)] \(message)")
 }
 
 func loge(_ message: String) {
   let formatter = DateFormatter()
-  formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+  formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
   let now = formatter.string(from: Date())
   print("[E|\(now)] \(message)")
 }

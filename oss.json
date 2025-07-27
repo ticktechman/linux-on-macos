@@ -1,7 +1,7 @@
 {
   "cpus": 2,
   "memory": 2048,
-  "kernel": "./distros/oss/vmlinuz",
+  "kernel": "./distros/oss/Image",
   "initrd": "",
   "storage": ["./distros/oss/root.img"],
   "cmdline": "console=hvc0 root=/dev/vda rw init=/sbin/init",
