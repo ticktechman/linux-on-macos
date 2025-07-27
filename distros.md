@@ -5,7 +5,6 @@
 - rootfs: raw disk image(with or without partitions)
 
 
-
 # ubuntu
 
 This vm use ubuntu cloud image and a generated seed.iso for cloud-init.
@@ -27,12 +26,9 @@ cd archlinux-img
 ./build.sh
 ```
 
-
-
-
 # oss
 
-This vm use opensource linux and busybox 
+This vm use opensource linux and busybox
 
 ```bash
  git clone --recursive https://github.com/ticktechman/oss-img
@@ -40,3 +36,6 @@ This vm use opensource linux and busybox
  ./build.sh
 ```
 
+
+> Important:
+> All the scripts above need to be run on a linux machine or VM.
