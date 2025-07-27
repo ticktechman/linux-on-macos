@@ -1,0 +1,9 @@
+[submodule "builder/oss-img"]
+	path = builder/oss-img
+	url = https://github.com/ticktechman/oss-img
+[submodule "builder/ubuntu-img"]
+	path = builder/ubuntu-img
+	url = https://github.com/ticktechman/ubuntu-img
+[submodule "builder/archlinux-img"]
+	path = builder/archlinux-img
+	url = https://github.com/ticktechman/archlinux-img
