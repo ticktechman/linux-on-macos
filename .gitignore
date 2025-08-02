@@ -1,3 +1,4 @@
 distros/*
 linux
 **/.DS_Store
+efistore

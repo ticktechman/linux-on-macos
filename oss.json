@@ -6,5 +6,6 @@
   "storage": ["./distros/oss/root.img"],
   "cmdline": "console=hvc0 root=/dev/vda rw init=/sbin/init",
   "shared": ["shared"],
-  "network": true
+  "network": true,
+  "uefi": false
 }

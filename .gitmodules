@@ -7,3 +7,6 @@
 [submodule "builder/archlinux-img"]
 	path = builder/archlinux-img
 	url = https://github.com/ticktechman/archlinux-img
+[submodule "builder/alpine-img"]
+	path = builder/alpine-img
+	url = https://github.com/ticktechman/alpine-img

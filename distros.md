@@ -37,5 +37,4 @@ This vm use opensource linux and busybox
 ```
 
 
-
 > **All the scripts above need to be run on a linux machine or VM. I use ubuntu25.04.**

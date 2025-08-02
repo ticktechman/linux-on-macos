@@ -11,6 +11,7 @@ struct LinuxVirtualMachineProfile: Codable {
   var storage: [String] = ["root.img"]
   var cmdline: String = "console=hvc0 root=/dev/vda rw"
   var network: Bool = false
+  var uefi: Bool = false
   var shared: [String] = []
 }
 
@@ -58,12 +59,27 @@ func load_profile(conf_name: String) -> LinuxVirtualMachineProfile? {
 
 // Creates a Linux bootloader with the given kernel and initial ramdisk.
 func createBootLoader(conf: LinuxVirtualMachineProfile) -> VZBootLoader {
-  let bootLoader = VZLinuxBootLoader(kernelURL: URL(fileURLWithPath: conf.kernel))
-  if conf.initrd != "" {
-    bootLoader.initialRamdiskURL = URL(fileURLWithPath: conf.initrd)
+  if conf.uefi {
+    let bootloader = VZEFIBootLoader()
+    do {
+      bootloader.variableStore = try VZEFIVariableStore(
+        creatingVariableStoreAt: URL(filePath: "efistore"),
+        options: [.allowOverwrite]
+      )
+    }
+    catch {
+      exit(EXIT_FAILURE)
+    }
+    return bootloader
   }
-  bootLoader.commandLine = conf.cmdline
-  return bootLoader
+  else {
+    let bootLoader = VZLinuxBootLoader(kernelURL: URL(fileURLWithPath: conf.kernel))
+    if conf.initrd != "" {
+      bootLoader.initialRamdiskURL = URL(fileURLWithPath: conf.initrd)
+    }
+    bootLoader.commandLine = conf.cmdline
+    return bootLoader
+  }
 }
 
 // serial port console for IO
@@ -151,6 +167,7 @@ func main() {
       exit(EXIT_FAILURE)
     }
   }
+
   RunLoop.main.run(until: Date.distantFuture)
 }
 

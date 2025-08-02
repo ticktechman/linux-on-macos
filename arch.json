@@ -6,5 +6,6 @@
   "storage": ["./distros/arch/root.img"],
   "cmdline": "console=hvc0 root=/dev/vda rw",
   "shared": ["shared"],
-  "network": true
+  "network": true,
+  "uefi": false
 }
