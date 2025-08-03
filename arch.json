@@ -4,7 +4,7 @@
   "kernel": "distros/arch/vmlinux",
   "initrd": "distros/arch/initrd.img",
   "storage": ["distros/arch/root.img"],
-  "cmdline": "console=hvc0 root=/dev/vda rw",
+  "cmdline": "console=hvc0 console=tty0 root=/dev/vda rw",
   "shared": ["shared"],
   "network": true,
   "uefi": false
