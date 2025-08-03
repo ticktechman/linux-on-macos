@@ -3,7 +3,6 @@ import Virtualization
 
 let MB: UInt64 = 1024 * 1024
 
-// MARK: - 虚拟机配置
 struct LinuxVirtualMachineProfile: Codable {
   var cpus: Int
   var memory: UInt64
@@ -179,6 +178,13 @@ class VMViewController: NSViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    vmView.wantsLayer = true
+    vmView.layer?.cornerRadius = 8
+    vmView.layer?.masksToBounds = true
+    vmView.layer?.borderWidth = 2
+    vmView.layer?.borderColor = NSColor.darkGray.cgColor
+    vmView.layer?.backgroundColor = NSColor.black.cgColor
+
     // 关闭 autoresizing 转换为约束
     statusLabel.translatesAutoresizingMaskIntoConstraints = false
     startButton.translatesAutoresizingMaskIntoConstraints = false
@@ -287,6 +293,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       backing: .buffered,
       defer: false
     )
+    window.minSize = NSSize(width: 800, height: 480)
     window.title = "Linux 虚拟机管理器"
     window.center()
     window.contentViewController = VMViewController()
