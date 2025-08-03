@@ -18,7 +18,7 @@ cat >"$APP_NAME.app/Contents/Info.plist" <<EOF
   <key>CFBundleExecutable</key>
   <string>${EXECUTABLE}</string>
   <key>CFBundleIdentifier</key>
-  <string>com.example.${APP_NAME}</string>
+  <string>com.ticktechman.${APP_NAME}</string>
   <key>CFBundleName</key>
   <string>${APP_NAME}</string>
   <key>CFBundleVersion</key>

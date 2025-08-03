@@ -10,4 +10,4 @@ glinux: glinux.swift main.entitlements
 	./pack.sh
 
 clean:
-	rm -f linux
+	rm -rf linux glinux guilinux.app
