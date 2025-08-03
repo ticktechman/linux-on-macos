@@ -216,7 +216,7 @@ class VMViewController: NSViewController {
       // 选择按钮，启动按钮左侧
       chooseButton.trailingAnchor.constraint(equalTo: startButton.leadingAnchor, constant: -10),
       chooseButton.topAnchor.constraint(equalTo: startButton.topAnchor),
-      chooseButton.widthAnchor.constraint(equalToConstant: 150),
+      chooseButton.widthAnchor.constraint(equalToConstant: 120),
       chooseButton.heightAnchor.constraint(equalToConstant: 32),
 
       // 虚拟机视图，填充主区域
@@ -237,6 +237,8 @@ class VMViewController: NSViewController {
       selectedConfigURL = url
       statusLabel.stringValue = "已选择配置文件：\(url.lastPathComponent)"
       startButton.isEnabled = true
+      let path = url.deletingLastPathComponent().path()
+      FileManager.default.changeCurrentDirectoryPath(path)
     }
   }
 
@@ -281,12 +283,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let windowSize = NSRect(x: 0, y: 0, width: 1280, height: 720)
     window = NSWindow(
       contentRect: windowSize,
-      styleMask: [.titled, .resizable, .closable],
+      styleMask: [.titled, .resizable, .closable, .miniaturizable],
       backing: .buffered,
       defer: false
     )
     window.title = "Linux 虚拟机管理器"
-    window.level = .floating
     window.center()
     window.contentViewController = VMViewController()
     window.makeKeyAndOrderFront(nil)
@@ -313,28 +314,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 }
 
-// // MARK: - AppDelegate
-// class AppDelegate: NSObject, NSApplicationDelegate {
-//   var window: NSWindow!
-//
-//   func applicationDidFinishLaunching(_ notification: Notification) {
-//     let windowSize = NSRect(x: 0, y: 0, width: 1280, height: 720)
-//     window = NSWindow(
-//       contentRect: windowSize,
-//       styleMask: [.titled, .resizable, .closable],
-//       backing: .buffered,
-//       defer: false
-//     )
-//     window.title = "Linux 虚拟机管理器"
-//     window.level = .floating
-//     window.center()
-//     window.contentViewController = VMViewController()
-//     window.makeKeyAndOrderFront(nil)
-//     NSApplication.shared.activate(ignoringOtherApps: true)
-//   }
-// }
-
-// MARK: - 启动
+// 启动
 let app = NSApplication.shared
 let delegate = AppDelegate()
 app.delegate = delegate

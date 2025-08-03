@@ -3,7 +3,7 @@
   "memory": 2048,
   "kernel": "",
   "initrd": "",
-  "storage": ["./distros/alpine/root.img", "./distros/alpine/seed.iso"],
+  "storage": ["distros/alpine/root.img", "distros/alpine/seed.iso"],
   "cmdline": "",
   "shared": ["shared"],
   "network": true,

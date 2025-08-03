@@ -4,8 +4,8 @@
   "kernel": "",
   "initrd": "",
   "storage": [
-    "/Users/ticktech/usr/project/github/linux-on-macos/distros/ubuntu/ubuntu-25.04-desktop-arm64.iso",
-    "/Users/ticktech/usr/project/github/linux-on-macos/distros/ubuntu/vm.img"
+    "./distros/ubuntu/ubuntu-25.04-desktop-arm64.iso",
+    "./distros/ubuntu/vm.img"
   ],
   "cmdline": "",
   "shared": [],
