@@ -1,11 +1,14 @@
 {
   "cpus": 2,
-  "memory": 2048,
+  "memory": 8192,
   "kernel": "",
   "initrd": "",
-  "storage": ["./distros/ubuntu/root.img", "./distros/ubuntu/seed.iso"],
+  "storage": [
+    "/Users/ticktech/usr/project/github/linux-on-macos/distros/ubuntu/ubuntu-25.04-desktop-arm64.iso",
+    "/Users/ticktech/usr/project/github/linux-on-macos/distros/ubuntu/vm.img"
+  ],
   "cmdline": "",
-  "shared": ["shared"],
+  "shared": [],
   "network": true,
   "uefi": true
 }

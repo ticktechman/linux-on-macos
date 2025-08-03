@@ -1,11 +1,13 @@
 {
   "cpus": 2,
   "memory": 2048,
-  "kernel": "./distros/oss/Image",
+  "kernel": "/Users/ticktech/usr/project/github/linux-on-macos/distros/oss/Image",
   "initrd": "",
-  "storage": ["./distros/oss/root.img"],
-  "cmdline": "console=hvc0 root=/dev/vda rw init=/sbin/init",
-  "shared": ["shared"],
+  "storage": [
+    "/Users/ticktech/usr/project/github/linux-on-macos/distros/oss/root.img"
+  ],
+  "cmdline": "console=tty0 console=hvc0 root=/dev/vda rw init=/sbin/init",
+  "shared": [],
   "network": true,
   "uefi": false
 }

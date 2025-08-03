@@ -2,3 +2,6 @@ distros/*
 linux
 **/.DS_Store
 efistore
+glinux
+guilinux.app
+
