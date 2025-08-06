@@ -49,6 +49,9 @@ func load_profile(conf_name: String) -> LinuxVirtualMachineProfile? {
     let data = try Data(contentsOf: url)
     let decoder = JSONDecoder()
     let profile = try decoder.decode(LinuxVirtualMachineProfile.self, from: data)
+    let setCurrentPath = FileManager.default.changeCurrentDirectoryPath
+    _ = setCurrentPath(url.deletingLastPathComponent().path())
+
     return profile
   }
   catch {
