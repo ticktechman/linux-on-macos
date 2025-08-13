@@ -39,13 +39,8 @@ extension Delegate: VZVirtualMachineDelegate {
 }
 
 func load_profile(conf_name: String) -> LinuxVirtualMachineProfile? {
-  let basename = (conf_name as NSString).deletingPathExtension
-  guard let url = Bundle.main.url(forResource: basename, withExtension: "json") else {
-    loge("No such file: \(conf_name)")
-    return nil
-  }
-
   do {
+    let url = URL(filePath: conf_name)
     let data = try Data(contentsOf: url)
     let decoder = JSONDecoder()
     let profile = try decoder.decode(LinuxVirtualMachineProfile.self, from: data)
@@ -64,15 +59,10 @@ func load_profile(conf_name: String) -> LinuxVirtualMachineProfile? {
 func createBootLoader(conf: LinuxVirtualMachineProfile) -> VZBootLoader {
   if conf.uefi {
     let bootloader = VZEFIBootLoader()
-    do {
-      bootloader.variableStore = try VZEFIVariableStore(
-        creatingVariableStoreAt: URL(filePath: "efistore"),
-        options: [.allowOverwrite]
-      )
-    }
-    catch {
-      exit(EXIT_FAILURE)
-    }
+    bootloader.variableStore = try! VZEFIVariableStore(
+      creatingVariableStoreAt: URL(filePath: "efistore"),
+      options: [.allowOverwrite]
+    )
     return bootloader
   }
   else {
